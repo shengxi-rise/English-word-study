@@ -9,33 +9,32 @@ int learn();
 int review();
 
 int welcome(){                                                     
-    cout <<" _ __ ___   ___ _ __  _ __ ___   ___  _ __ _   _ " << endl;
-    cout <<"| '_ ` _ \\ / _ \\ '_ \\| '_ ` _ \\ / _ \\| '__| | | |" << endl;
-    cout <<"| | | | | |  __/ | | | | | | | | (_) | |  | |_| |" << endl;
-    cout <<"|_| |_| |_|\\___|_| |_|_| |_| |_|\\___/|_|   \\__, |" << endl;
-    cout <<"                                            __/ |" << endl;
-    cout <<"                                           |___/ " << endl;
+    cout << "  _ __ ___   ___ _ __ ___   ___  _ __ _   _ " << endl
+             << " | '_ ` _ \\ / _ \\ '_ ` _ \\ / _ \\| '__| | | |" << endl
+             << " | | | | | |  __/ | | | | | (_) | |  | |_| |" << endl
+             << " |_| |_| |_|\\___|_| |_| |_|\\___/|_|   \\__, |" << endl
+             << "                                      |___/ " << endl;
     cout << "Please read the introduction before use ^_^" << endl;
     return 0;
 }
 
 
 int learn(){
-    fstream hist;   //¼ÇÂ¼Ö¸ÕëÎ»ÖÃ
-    fstream cfile;   //¶ÁÈ¡µ¥´Ê¶ÔÓ¦µÄÖÐÎÄ
-    fstream efile;  //¶ÁÈ¡Ó¢Óïµ¥´Ê
-    fstream wefile;  //Ð´ÈëÒÑ¿´µ¥´Ê
-    fstream wcfile;  //Ð´ÈëÒÑ¿´ÖÐÎÄ
-    long pose;   //´æ´¢µ¥´ÊÊä³öÁ÷Ö¸ÕëµÄÎ»ÖÃ
-    long posc;    //´æ´¢ÖÐÎÄÊä³öÁ÷Ö¸ÕëÎ»ÖÃ
+    fstream hist;   //è®°å½•æŒ‡é’ˆä½ç½®
+    fstream cfile;   //è¯»å–å•è¯å¯¹åº”çš„ä¸­æ–‡
+    fstream efile;  //è¯»å–è‹±è¯­å•è¯
+    fstream wefile;  //å†™å…¥å·²çœ‹å•è¯
+    fstream wcfile;  //å†™å…¥å·²çœ‹ä¸­æ–‡
+    long pose;   //å­˜å‚¨å•è¯è¾“å‡ºæµæŒ‡é’ˆçš„ä½ç½®
+    long posc;    //å­˜å‚¨ä¸­æ–‡è¾“å‡ºæµæŒ‡é’ˆä½ç½®
 
-    //¶ÁÈ¡ÀúÊ·¼ÇÂ¼
+    //è¯»å–åŽ†å²è®°å½•
     hist.open("history",ios::in);
     hist >> pose;
     hist >> posc;
     hist.close();
 
-    //Ó¢ÎÄ
+    //è‹±æ–‡
     char letter[30]={""};
     string english[30]={""};
     efile.open("english.log",ios::in);
@@ -47,7 +46,7 @@ int learn(){
     pose=efile.tellp();
     efile.close();
 
-    //´¢´æ
+    //å‚¨å­˜
     wefile.open("english1.log",ios::app);
     for(int i=0;i<10;i++){
         wefile << english[i] << endl;
@@ -55,7 +54,7 @@ int learn(){
     wefile.close();
 
 
-    //ÖÐÎÄ
+    //ä¸­æ–‡
     char character[100]={""};
     string chinese[40]={""};
     cfile.open("chinese.log",ios::in);
@@ -67,7 +66,7 @@ int learn(){
     posc=cfile.tellp();
     cfile.close();
 
-    //´¢´æ
+    //å‚¨å­˜
     wcfile.open("chinese1.log",ios::app);
     for(int i=0;i<10;i++){
         wcfile << chinese[i] << endl;
@@ -80,7 +79,7 @@ int learn(){
     hist.close();
 
 /*
-    //¿ªÊ¼
+    //å¼€å§‹
     for(int i=0;i<10;i++){
         cout << i+1 << ". " << english[i] << endl;
     }
@@ -108,21 +107,21 @@ int learn(){
 }
 
 int review(){
-    fstream hist;   //¼ÇÂ¼Ö¸ÕëÎ»ÖÃ
-    fstream cfile;   //¶ÁÈ¡µ¥´Ê¶ÔÓ¦µÄÖÐÎÄ
-    fstream efile;  //¶ÁÈ¡Ó¢Óïµ¥´Ê
-    fstream wefile;  //Ð´ÈëÒÑ¿´µ¥´Ê
-    fstream wcfile;  //Ð´ÈëÒÑ¿´ÖÐÎÄ
-    long pose;   //´æ´¢µ¥´ÊÊä³öÁ÷Ö¸ÕëµÄÎ»ÖÃ
-    long posc;    //´æ´¢ÖÐÎÄÊä³öÁ÷Ö¸ÕëÎ»ÖÃ
+    fstream hist;   //è®°å½•æŒ‡é’ˆä½ç½®
+    fstream cfile;   //è¯»å–å•è¯å¯¹åº”çš„ä¸­æ–‡
+    fstream efile;  //è¯»å–è‹±è¯­å•è¯
+    fstream wefile;  //å†™å…¥å·²çœ‹å•è¯
+    fstream wcfile;  //å†™å…¥å·²çœ‹ä¸­æ–‡
+    long pose;   //å­˜å‚¨å•è¯è¾“å‡ºæµæŒ‡é’ˆçš„ä½ç½®
+    long posc;    //å­˜å‚¨ä¸­æ–‡è¾“å‡ºæµæŒ‡é’ˆä½ç½®
 
-    //¶ÁÈ¡ÀúÊ·¼ÇÂ¼
+    //è¯»å–åŽ†å²è®°å½•
     hist.open("r_history",ios::in);
     hist >> pose;
     hist >> posc;
     hist.close();
 
-    //Ó¢ÎÄ
+    //è‹±æ–‡
     char letter[30]={""};
     string english[30]={""};
     efile.open("english1.log",ios::in);
@@ -135,7 +134,7 @@ int review(){
     efile.close();
 
 
-    //ÖÐÎÄ
+    //ä¸­æ–‡
     char character[100]={""};
     string chinese[40]={""};
     cfile.open("chinese1.log",ios::in);
@@ -154,7 +153,7 @@ int review(){
     hist.close();
 
 /*
-    //¿ªÊ¼
+    //å¼€å§‹
     for(int i=0;i<10;i++){
         cout << i+1 << ". " << english[i] << endl;
     }
